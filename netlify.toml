@@ -1,0 +1,20 @@
+[images]
+  remote_images = ["https://ext.same-assets.com/*", "https://ui-avatars.com/*", "https://images.unsplash.com/*", "https://source.unsplash.com/*"]
+
+[build]
+  command = "bun run build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_BASE_URL = "https://smart-inventory-system.netlify.app"
+  NODE_VERSION = "20"
+  NEXT_PRIVATE_TARGET = "server"
+  NETLIFY_NEXT_PLUGIN_SKIP = "false"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
